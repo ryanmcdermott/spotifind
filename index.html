@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Spotifind by ryanmcdermott</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Spotifind</h1>
+        <h2>Connect two musical artists by a chain of related artists using Spotify&#39;s API</h2>
+        <a href="https://github.com/ryanmcdermott/spotifind" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="spotifind" class="anchor" href="#spotifind" aria-hidden="true"><span class="octicon octicon-link"></span></a>Spotifind</h1>
+
+<h2>
+<a id="what-is-it" class="anchor" href="#what-is-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is it?</h2>
+
+<p>Spotifind is an app that uses Spotify's API to connect one artist to another by a chain of related artists.</p>
+
+<p>You start with an origin artist, and you go through their related artists, and each related artists’ related artists, and so on and so forth, until you get a chain that links your origin artist to your destination artist by how they are related.</p>
+
+<p>Spotifind is written in Go and requires the Golang compiler and GOPATH/GOROOT to be properly set up.</p>
+
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h2>
+
+<p>Spotifind uses Spotify's API, so creating and registering an application is necessary. Go to <a href="https://developer.spotify.com/my-applications">Spotify's developer site</a> to login with your Spotify account, and create your application. Call it whatever you want and don't worry about having a URI redirect or a website to link to. Just type the name of your application and its description and you'll get your client id and client secret. Save these, as we will need them shortly!</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<ol>
+<li><code>git clone https://github.com/ryanmcdermott/spotifind.git</code></li>
+<li><code>cd spotifind</code></li>
+<li><code>export SPOTIFY_CLIENT_ID="(YOUR_CLIENT_ID)"</code></li>
+<li><code>export SPOTIFY_CLIENT_SECRET="(YOUR_CLIENT_SECRET)"</code></li>
+<li><code>make vendor_get</code></li>
+<li><code>make build</code></li>
+<li>The executable should be available ./bin/ and can be run by the example below.</li>
+</ol>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h2>
+
+<p><code>./bin/spotifind -o "Led Zeppelin" -d "Taylor Swift"</code></p>
+
+<h2>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h2>
+
+<ul>
+<li>Allow users to specify the number of concurrent workers to run</li>
+<li>Add a '--silent' option </li>
+<li>Better error handling when the app exceeds Spotify's API request limit.</li>
+</ul>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Pull requests are much appreciated and accepted.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Spotifind is released under the <a href="http://www.opensource.org/licenses/MIT">MIT License</a></p>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>Nick Saika's <a href="http://nesv.github.io/golang/2014/02/25/worker-queues-in-go.html">incredible article</a> on concurrent workers for Golang.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/ryanmcdermott/spotifind/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/ryanmcdermott/spotifind/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/ryanmcdermott/spotifind"></a> is maintained by <a href="https://github.com/ryanmcdermott">ryanmcdermott</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
